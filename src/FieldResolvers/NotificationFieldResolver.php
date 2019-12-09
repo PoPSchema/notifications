@@ -9,7 +9,7 @@ use PoP\ComponentModel\GeneralUtils;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Engine\Route\RouteUtils;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
-use PoP\Users\TypeDataResolvers\ConvertibleUserTypeDataResolver;
+use PoP\Users\TypeDataResolvers\UserTypeDataResolver;
 use PoP\Notifications\TypeResolvers\NotificationTypeResolver;
 
 class NotificationFieldResolver extends AbstractDBDataFieldResolver
@@ -274,7 +274,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         switch ($fieldName) {
             case 'user-id':
-                return ConvertibleUserTypeDataResolver::class;
+                return UserTypeDataResolver::class;
         }
 
         return parent::resolveFieldDefaultTypeDataResolverClass($typeResolver, $fieldName, $fieldArgs);
