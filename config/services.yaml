@@ -1,0 +1,4 @@
+services:
+    PoP\Notifications\FieldResolvers\:
+        resource: '../src/FieldResolvers/*'
+        public: true
