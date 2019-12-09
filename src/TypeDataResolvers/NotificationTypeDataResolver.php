@@ -4,6 +4,7 @@ namespace PoP\Notifications\TypeDataResolvers;
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\ComponentModel\TypeDataResolvers\AbstractTypeQueryableDataResolver;
 use PoP\Notifications\TypeResolvers\NotificationTypeResolver;
+use PoP_Notifications_API;
 
 class NotificationTypeDataResolver extends AbstractTypeQueryableDataResolver
 {
