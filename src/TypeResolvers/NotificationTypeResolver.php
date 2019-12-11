@@ -6,11 +6,11 @@ use PoP\Notifications\TypeDataResolvers\NotificationTypeDataResolver;
 
 class NotificationTypeResolver extends AbstractTypeResolver
 {
-	public const TYPE_COLLECTION_NAME = 'notifications';
+	public const NAME = 'notifications';
 
-    public function getTypeCollectionName(): string
+    public function getTypeName(): string
     {
-        return self::TYPE_COLLECTION_NAME;
+        return self::NAME;
     }
 
     public function getId($resultItem)
