@@ -6,7 +6,7 @@ use PoP\Notifications\TypeDataResolvers\NotificationTypeDataResolver;
 
 class NotificationTypeResolver extends AbstractTypeResolver
 {
-	public const NAME = 'notifications';
+	public const NAME = 'Notification';
 
     public function getTypeName(): string
     {
