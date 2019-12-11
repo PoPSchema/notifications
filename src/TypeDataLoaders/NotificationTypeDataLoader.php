@@ -1,11 +1,11 @@
 <?php
-namespace PoP\Notifications\TypeDataResolvers;
+namespace PoP\Notifications\TypeDataLoaders;
 
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\ComponentModel\TypeDataResolvers\AbstractTypeQueryableDataResolver;
+use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataResolver;
 use PoP_Notifications_API;
 
-class NotificationTypeDataResolver extends AbstractTypeQueryableDataResolver
+class NotificationTypeDataLoader extends AbstractTypeQueryableDataResolver
 {
     public function getDataquery()
     {

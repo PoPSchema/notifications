@@ -2,7 +2,7 @@
 namespace PoP\Notifications\TypeResolvers;
 
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
-use PoP\Notifications\TypeDataResolvers\NotificationTypeDataResolver;
+use PoP\Notifications\TypeDataLoaders\NotificationTypeDataLoader;
 
 class NotificationTypeResolver extends AbstractTypeResolver
 {
@@ -19,9 +19,9 @@ class NotificationTypeResolver extends AbstractTypeResolver
         return $notification->histid;
     }
 
-    public function getTypeDataResolverClass(): string
+    public function getTypeDataLoaderClass(): string
     {
-        return NotificationTypeDataResolver::class;
+        return NotificationTypeDataLoader::class;
     }
 }
 
