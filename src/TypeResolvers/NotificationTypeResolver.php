@@ -19,7 +19,7 @@ class NotificationTypeResolver extends AbstractTypeResolver
         return $notification->histid;
     }
 
-    public function getIdFieldTypeDataResolverClass(): string
+    public function getTypeDataResolverClass(): string
     {
         return NotificationTypeDataResolver::class;
     }
