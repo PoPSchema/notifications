@@ -125,10 +125,10 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
             case 'is-action':
                 return [
                     [
-                        'name' => 'action',
-                        'type' => SchemaDefinition::TYPE_STRING,
-                        'description' => $translationAPI->__('The action to check against the notification', 'pop-posts'),
-                        'mandatory' => true,
+                        SchemaDefinition::ARGNAME_NAME => 'action',
+                        SchemaDefinition::ARGNAME_TYPE => SchemaDefinition::TYPE_STRING,
+                        SchemaDefinition::ARGNAME_DESCRIPTION => $translationAPI->__('The action to check against the notification', 'pop-posts'),
+                        SchemaDefinition::ARGNAME_MANDATORY => true,
                     ],
                 ];
         }
