@@ -1,6 +1,7 @@
 <?php
 namespace PoP\Notifications\TypeResolvers;
 
+use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
 use PoP\Notifications\TypeDataLoaders\NotificationTypeDataLoader;
 
@@ -11,6 +12,12 @@ class NotificationTypeResolver extends AbstractTypeResolver
     public function getTypeName(): string
     {
         return self::NAME;
+    }
+
+    public function getSchemaTypeDescription(): ?string
+    {
+        $translationAPI = TranslationAPIFacade::getInstance();
+        return $translationAPI->__('Notifications for the user', 'notifications');
     }
 
     public function getId($resultItem)
