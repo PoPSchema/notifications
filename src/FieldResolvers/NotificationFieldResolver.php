@@ -61,7 +61,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
             'object-id' => SchemaDefinition::TYPE_ID,
             'user-id' => SchemaDefinition::TYPE_ID,
             'website-url' => SchemaDefinition::TYPE_URL,
-            'user-caps' => TypeCastingHelpers::combineTypes(SchemaDefinition::TYPE_ARRAY, SchemaDefinition::TYPE_STRING),
+            'user-caps' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
             'hist-ip' => SchemaDefinition::TYPE_IP,
             'hist-time' => SchemaDefinition::TYPE_DATE,
             'hist-time-nogmt' => SchemaDefinition::TYPE_DATE,
