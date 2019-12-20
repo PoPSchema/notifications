@@ -143,7 +143,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         $cmsengineapi = \PoP\Engine\FunctionAPIFactory::getInstance();
         $cmscommentsapi = \PoP\Comments\FunctionAPIFactory::getInstance();
         $cmsusersapi = \PoP\Users\FunctionAPIFactory::getInstance();
-        $cmspostsapi = PostTypeAPIFacade::getInstance();
+        $postTypeAPI = PostTypeAPIFacade::getInstance();
         $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
         $cmscommentsresolver = \PoP\Comments\ObjectPropertyResolverFactory::getInstance();
         switch ($fieldName) {
@@ -216,7 +216,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
                 // URL depends basically on the action performed on the object type
                 switch ($notification->object_type) {
                     case 'Post':
-                        return $cmspostsapi->getPermalink($notification->object_id);
+                        return $postTypeAPI->getPermalink($notification->object_id);
 
                     case 'User':
                         return $cmsusersapi->getUserURL($notification->object_id);
@@ -226,7 +226,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
 
                     case 'Comments':
                         $comment = $cmscommentsapi->getComment($notification->object_id);
-                        return $cmspostsapi->getPermalink($cmscommentsresolver->getCommentPostId($comment));
+                        return $postTypeAPI->getPermalink($cmscommentsresolver->getCommentPostId($comment));
                 }
                 return null;
 
