@@ -196,12 +196,12 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
 
             case 'mark-as-read-url':
                 return GeneralUtils::addQueryArgs([
-                    'nid' => $typeResolver->getId($notification),
+                    'nid' => $typeResolver->getID($notification),
                 ], RouteUtils::getRouteURL(POP_NOTIFICATIONS_ROUTE_NOTIFICATIONS_MARKASREAD));
 
             case 'mark-as-unread-url':
                 return GeneralUtils::addQueryArgs([
-                    'nid' => $typeResolver->getId($notification),
+                    'nid' => $typeResolver->getID($notification),
                 ], RouteUtils::getRouteURL(POP_NOTIFICATIONS_ROUTE_NOTIFICATIONS_MARKASUNREAD));
 
             case 'icon':
