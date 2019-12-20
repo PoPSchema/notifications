@@ -11,6 +11,7 @@ use PoP\Engine\Route\RouteUtils;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\Notifications\TypeResolvers\NotificationTypeResolver;
+use PoP\Posts\Facades\PostTypeAPIFacade;
 
 class NotificationFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -142,7 +143,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         $cmsengineapi = \PoP\Engine\FunctionAPIFactory::getInstance();
         $cmscommentsapi = \PoP\Comments\FunctionAPIFactory::getInstance();
         $cmsusersapi = \PoP\Users\FunctionAPIFactory::getInstance();
-        $cmspostsapi = \PoP\Posts\FunctionAPIFactory::getInstance();
+        $cmspostsapi = PostTypeAPIFacade::getInstance();
         $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
         $cmscommentsresolver = \PoP\Comments\ObjectPropertyResolverFactory::getInstance();
         switch ($fieldName) {
