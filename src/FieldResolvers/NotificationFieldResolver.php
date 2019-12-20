@@ -136,21 +136,6 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         return parent::getSchemaFieldArgs($typeResolver, $fieldName);
     }
 
-    public function resolveSchemaValidationErrorDescription(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
-    {
-        $translationAPI = TranslationAPIFacade::getInstance();
-        switch ($fieldName) {
-            case 'is-action':
-                $action = $fieldArgs['action'];
-                if (!$action) {
-                    return $translationAPI->__('Argument \'action\' cannot be empty', 'pop-posts');
-                }
-                return null;
-        }
-
-        return parent::resolveSchemaValidationErrorDescription($typeResolver, $fieldName, $fieldArgs);
-    }
-
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $notification = $resultItem;
