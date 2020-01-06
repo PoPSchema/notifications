@@ -7,11 +7,6 @@ use PoP_Notifications_API;
 
 class NotificationTypeDataLoader extends AbstractTypeQueryableDataLoader
 {
-    public function getDataquery()
-    {
-        return GD_DATAQUERY_NOTIFICATION;
-    }
-
     protected function getOrderbyDefault()
     {
         return 'histid';
