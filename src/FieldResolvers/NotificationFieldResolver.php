@@ -24,31 +24,31 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         return [
             'action',
-            'object-type',
-            'object-subtype',
-            'object-name',
-            'object-id',
-            'user-id',
-            'website-url',
-            'user-caps',
-            'hist-ip',
-            'hist-time',
-            'hist-time-nogmt',
-            'hist-time-readable',
+            'objectType',
+            'objectSubtype',
+            'objectName',
+            'objectID',
+            'userID',
+            'websiteURL',
+            'userCaps',
+            'histIp',
+            'histTime',
+            'histTimeNogmt',
+            'histTimeReadable',
             'status',
-            'is-status-read',
-            'is-status-not-read',
-            'mark-as-read-url',
-            'mark-as-unread-url',
+            'isStatusRead',
+            'isStatusNotRead',
+            'markAsReadURL',
+            'markAsUnreadURL',
             'icon',
             'url',
             'target',
             'message',
-            'is-post-notification',
-            'is-user-notification',
-            'is-comment-notification',
-            'is-taxonomy-notification',
-            'is-action',
+            'isPostNotification',
+            'isUserNotification',
+            'isCommentNotification',
+            'isTaxonomyNotification',
+            'isAction',
         ];
     }
 
@@ -56,31 +56,31 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         $types = [
             'action' => SchemaDefinition::TYPE_STRING,
-            'object-type' => SchemaDefinition::TYPE_STRING,
-            'object-subtype' => SchemaDefinition::TYPE_STRING,
-            'object-name' => SchemaDefinition::TYPE_STRING,
-            'object-id' => SchemaDefinition::TYPE_ID,
-            'user-id' => SchemaDefinition::TYPE_ID,
-            'website-url' => SchemaDefinition::TYPE_URL,
-            'user-caps' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
-            'hist-ip' => SchemaDefinition::TYPE_IP,
-            'hist-time' => SchemaDefinition::TYPE_DATE,
-            'hist-time-nogmt' => SchemaDefinition::TYPE_DATE,
-            'hist-time-readable' => SchemaDefinition::TYPE_STRING,
+            'objectType' => SchemaDefinition::TYPE_STRING,
+            'objectSubtype' => SchemaDefinition::TYPE_STRING,
+            'objectName' => SchemaDefinition::TYPE_STRING,
+            'objectID' => SchemaDefinition::TYPE_ID,
+            'userID' => SchemaDefinition::TYPE_ID,
+            'websiteURL' => SchemaDefinition::TYPE_URL,
+            'userCaps' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
+            'histIp' => SchemaDefinition::TYPE_IP,
+            'histTime' => SchemaDefinition::TYPE_DATE,
+            'histTimeNogmt' => SchemaDefinition::TYPE_DATE,
+            'histTimeReadable' => SchemaDefinition::TYPE_STRING,
             'status' => SchemaDefinition::TYPE_STRING,
-            'is-status-read' => SchemaDefinition::TYPE_BOOL,
-            'is-status-not-read' => SchemaDefinition::TYPE_BOOL,
-            'mark-as-read-url' => SchemaDefinition::TYPE_URL,
-            'mark-as-unread-url' => SchemaDefinition::TYPE_URL,
+            'isStatusRead' => SchemaDefinition::TYPE_BOOL,
+            'isStatusNotRead' => SchemaDefinition::TYPE_BOOL,
+            'markAsReadURL' => SchemaDefinition::TYPE_URL,
+            'markAsUnreadURL' => SchemaDefinition::TYPE_URL,
             'icon' => SchemaDefinition::TYPE_STRING,
             'url' => SchemaDefinition::TYPE_URL,
             'target' => SchemaDefinition::TYPE_STRING,
             'message' => SchemaDefinition::TYPE_STRING,
-            'is-post-notification' => SchemaDefinition::TYPE_BOOL,
-            'is-user-notification' => SchemaDefinition::TYPE_BOOL,
-            'is-comment-notification' => SchemaDefinition::TYPE_BOOL,
-            'is-taxonomy-notification' => SchemaDefinition::TYPE_BOOL,
-            'is-action' => SchemaDefinition::TYPE_BOOL,
+            'isPostNotification' => SchemaDefinition::TYPE_BOOL,
+            'isUserNotification' => SchemaDefinition::TYPE_BOOL,
+            'isCommentNotification' => SchemaDefinition::TYPE_BOOL,
+            'isTaxonomyNotification' => SchemaDefinition::TYPE_BOOL,
+            'isAction' => SchemaDefinition::TYPE_BOOL,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -90,31 +90,31 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
 			'action' => $translationAPI->__('', ''),
-            'object-type' => $translationAPI->__('', ''),
-            'object-subtype' => $translationAPI->__('', ''),
-            'object-name' => $translationAPI->__('', ''),
-            'object-id' => $translationAPI->__('', ''),
-            'user-id' => $translationAPI->__('', ''),
-            'website-url' => $translationAPI->__('', ''),
-            'user-caps' => $translationAPI->__('', ''),
-            'hist-ip' => $translationAPI->__('', ''),
-            'hist-time' => $translationAPI->__('', ''),
-            'hist-time-nogmt' => $translationAPI->__('', ''),
-            'hist-time-readable' => $translationAPI->__('', ''),
+            'objectType' => $translationAPI->__('', ''),
+            'objectSubtype' => $translationAPI->__('', ''),
+            'objectName' => $translationAPI->__('', ''),
+            'objectID' => $translationAPI->__('', ''),
+            'userID' => $translationAPI->__('', ''),
+            'websiteURL' => $translationAPI->__('', ''),
+            'userCaps' => $translationAPI->__('', ''),
+            'histIp' => $translationAPI->__('', ''),
+            'histTime' => $translationAPI->__('', ''),
+            'histTimeNogmt' => $translationAPI->__('', ''),
+            'histTimeReadable' => $translationAPI->__('', ''),
             'status' => $translationAPI->__('', ''),
-            'is-status-read' => $translationAPI->__('', ''),
-            'is-status-not-read' => $translationAPI->__('', ''),
-            'mark-as-read-url' => $translationAPI->__('', ''),
-            'mark-as-unread-url' => $translationAPI->__('', ''),
+            'isStatusRead' => $translationAPI->__('', ''),
+            'isStatusNotRead' => $translationAPI->__('', ''),
+            'markAsReadURL' => $translationAPI->__('', ''),
+            'markAsUnreadURL' => $translationAPI->__('', ''),
             'icon' => $translationAPI->__('', ''),
             'url' => $translationAPI->__('', ''),
             'target' => $translationAPI->__('', ''),
             'message' => $translationAPI->__('', ''),
-            'is-post-notification' => $translationAPI->__('', ''),
-            'is-user-notification' => $translationAPI->__('', ''),
-            'is-comment-notification' => $translationAPI->__('', ''),
-            'is-taxonomy-notification' => $translationAPI->__('', ''),
-            'is-action' => $translationAPI->__('', ''),
+            'isPostNotification' => $translationAPI->__('', ''),
+            'isUserNotification' => $translationAPI->__('', ''),
+            'isCommentNotification' => $translationAPI->__('', ''),
+            'isTaxonomyNotification' => $translationAPI->__('', ''),
+            'isAction' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -123,7 +123,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         switch ($fieldName) {
-            case 'is-action':
+            case 'isAction':
                 return [
                     [
                         SchemaDefinition::ARGNAME_NAME => 'action',
@@ -149,29 +149,29 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         switch ($fieldName) {
             case 'action':
                 return $notification->action;
-            case 'object-type':
+            case 'objectType':
                 return $notification->object_type;
-            case 'object-subtype':
+            case 'objectSubtype':
                 return $notification->object_subtype;
-            case 'object-name':
+            case 'objectName':
                 return $notification->object_name;
-            case 'object-id':
+            case 'objectID':
                 return $notification->object_id;
-            case 'user-id':
+            case 'userID':
                 return $notification->user_id;
-            case 'website-url':
+            case 'websiteURL':
                 return $cmsusersapi->getUserURL($notification->user_id);
-            case 'user-caps':
+            case 'userCaps':
                 return $notification->user_caps;
-            case 'hist-ip':
+            case 'histIp':
                 return $notification->hist_ip;
-            case 'hist-time':
+            case 'histTime':
                 return $notification->hist_time;
-            case 'hist-time-nogmt':
+            case 'histTimeNogmt':
                 // In the DB, the time is saved without GMT. However, in the front-end we need the GMT factored in,
                 // because moment.js will
                 return $notification->hist_time - ($cmsengineapi->getOption(NameResolverFacade::getInstance()->getName('popcms:option:gmtOffset')) * 3600);
-            case 'hist-time-readable':
+            case 'histTimeReadable':
                 // Must convert date using GMT
                 return sprintf(
                     TranslationAPIFacade::getInstance()->__('%s ago', 'pop-notifications'),
@@ -186,20 +186,20 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
                 }
                 return $value;
 
-            case 'is-status-read':
+            case 'isStatusRead':
                 $status = $typeResolver->resolveValue($resultItem, 'status', $variables, $expressions, $options);
                 return ($status == AAL_POP_STATUS_READ);
 
-            case 'is-status-not-read':
-                $is_read = $typeResolver->resolveValue($resultItem, 'is-status-read', $variables, $expressions, $options);
+            case 'isStatusNotRead':
+                $is_read = $typeResolver->resolveValue($resultItem, 'isStatusRead', $variables, $expressions, $options);
                 return !$is_read;
 
-            case 'mark-as-read-url':
+            case 'markAsReadURL':
                 return GeneralUtils::addQueryArgs([
                     'nid' => $typeResolver->getID($notification),
                 ], RouteUtils::getRouteURL(POP_NOTIFICATIONS_ROUTE_NOTIFICATIONS_MARKASREAD));
 
-            case 'mark-as-unread-url':
+            case 'markAsUnreadURL':
                 return GeneralUtils::addQueryArgs([
                     'nid' => $typeResolver->getID($notification),
                 ], RouteUtils::getRouteURL(POP_NOTIFICATIONS_ROUTE_NOTIFICATIONS_MARKASUNREAD));
@@ -237,19 +237,19 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
             case 'message':
                 return $notification->object_name;
 
-            case 'is-post-notification':
+            case 'isPostNotification':
                 return $notification->object_type == 'Post';
 
-            case 'is-user-notification':
+            case 'isUserNotification':
                 return $notification->object_type == 'User';
 
-            case 'is-comment-notification':
+            case 'isCommentNotification':
                 return $notification->object_type == 'Comments';
 
-            case 'is-taxonomy-notification':
+            case 'isTaxonomyNotification':
                 return $notification->object_type == 'Taxonomy';
 
-            case 'is-action':
+            case 'isAction':
                 return $fieldArgs['action'] == $notification->action;
         }
 
@@ -259,7 +259,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
     {
         switch ($fieldName) {
-            case 'user-id':
+            case 'userID':
                 return UserTypeResolver::class;
         }
 
