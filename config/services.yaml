@@ -2,3 +2,7 @@ services:
     PoP\Notifications\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true
+
+    PoP\Notifications\TypeResolvers\:
+        resource: '../src/TypeResolvers/*'
+        public: true

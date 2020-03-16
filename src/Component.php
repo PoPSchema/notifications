@@ -32,6 +32,7 @@ class Component extends AbstractComponent
         parent::boot();
 
         // Initialize classes
+        ContainerBuilderUtils::registerTypeResolversFromNamespace(__NAMESPACE__.'\\TypeResolvers');
         ContainerBuilderUtils::attachFieldResolversFromNamespace(__NAMESPACE__.'\\FieldResolvers');
     }
 }
