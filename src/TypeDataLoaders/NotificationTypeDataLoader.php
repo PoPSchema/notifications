@@ -3,6 +3,7 @@ namespace PoP\Notifications\TypeDataLoaders;
 
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\ComponentModel\TypeDataLoaders\AbstractTypeQueryableDataLoader;
+use PoP\ComponentModel\State\ApplicationState;
 use PoP_Notifications_API;
 
 class NotificationTypeDataLoader extends AbstractTypeQueryableDataLoader
@@ -22,7 +23,7 @@ class NotificationTypeDataLoader extends AbstractTypeQueryableDataLoader
         $query = parent::getQuery($query_args);
 
         // Pagination
-        $vars = \PoP\ComponentModel\Engine_Vars::getVars();
+        $vars = ApplicationState::getVars();
         if ($vars['loading-latest']) {
             $query['pagenumber'] = 1;
             $query['limit'] = -1; // Limit=-1 => Bring all results
