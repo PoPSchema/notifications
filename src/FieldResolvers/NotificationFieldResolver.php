@@ -5,7 +5,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\GeneralUtils;
+use PoP\ComponentModel\Misc\GeneralUtils;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Engine\Route\RouteUtils;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
