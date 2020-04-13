@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\Notifications\TypeDataLoaders;
 
 use PoP\Hooks\Facades\HooksAPIFacade;
