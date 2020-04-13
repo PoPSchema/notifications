@@ -89,7 +89,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'action' => $translationAPI->__('', ''),
+            'action' => $translationAPI->__('', ''),
             'objectType' => $translationAPI->__('', ''),
             'objectSubtype' => $translationAPI->__('', ''),
             'objectName' => $translationAPI->__('', ''),

@@ -7,7 +7,7 @@ use PoP\Notifications\TypeDataLoaders\NotificationTypeDataLoader;
 
 class NotificationTypeResolver extends AbstractTypeResolver
 {
-	public const NAME = 'Notification';
+    public const NAME = 'Notification';
 
     public function getTypeName(): string
     {
@@ -31,4 +31,3 @@ class NotificationTypeResolver extends AbstractTypeResolver
         return NotificationTypeDataLoader::class;
     }
 }
-

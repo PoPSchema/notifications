@@ -18,14 +18,14 @@ class NotificationFunctionalFieldResolver extends AbstractFunctionalFieldResolve
     public static function getFieldNamesToResolve(): array
     {
         return [
-			'multilayoutKeys',
+            'multilayoutKeys',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'multilayoutKeys' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
+            'multilayoutKeys' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_STRING),
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -34,7 +34,7 @@ class NotificationFunctionalFieldResolver extends AbstractFunctionalFieldResolve
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'multilayoutKeys' => $translationAPI->__('', ''),
+            'multilayoutKeys' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -48,7 +48,7 @@ class NotificationFunctionalFieldResolver extends AbstractFunctionalFieldResolve
                 $object_type = $typeResolver->resolveValue($notification, 'objectType', $variables, $expressions, $options);
                 $action = $typeResolver->resolveValue($notification, 'action', $variables, $expressions, $options);
                 return array(
-                    $object_type.'-'.$action,
+                    $object_type . '-' . $action,
                 );
         }
 

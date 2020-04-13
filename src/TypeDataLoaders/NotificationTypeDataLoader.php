@@ -27,8 +27,7 @@ class NotificationTypeDataLoader extends AbstractTypeQueryableDataLoader
         if ($vars['loading-latest']) {
             $query['pagenumber'] = 1;
             $query['limit'] = -1; // Limit=-1 => Bring all results
-        }
-        else {
+        } else {
             if ($pagenumber = $query_args[GD_URLPARAM_PAGENUMBER]) {
                 $query['pagenumber'] = $pagenumber;
             }
