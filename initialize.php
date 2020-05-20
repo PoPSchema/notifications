@@ -1,2 +1,2 @@
 <?php
-\PoP\Notifications\Component::init();
+//\PoP\Notifications\Component::initialize();
