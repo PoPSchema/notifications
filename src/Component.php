@@ -38,7 +38,7 @@ class Component extends AbstractComponent
     /**
      * Initialize services
      */
-    protected static function doInitialize()
+    protected static function doInitialize(): void
     {
         parent::doInitialize();
         self::initYAMLServices(dirname(__DIR__));
@@ -49,7 +49,7 @@ class Component extends AbstractComponent
      *
      * @return void
      */
-    public static function beforeBoot()
+    public static function beforeBoot(): void
     {
         parent::beforeBoot();
 
