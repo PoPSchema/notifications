@@ -25,7 +25,9 @@ composer require getpop/notifications
 Initialize the component:
 
 ``` php
-\PoP\Notifications\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\Notifications\Component::class,
+]);
 ```
 
 ## Standards
