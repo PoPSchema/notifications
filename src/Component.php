@@ -31,7 +31,7 @@ class Component extends AbstractComponent
     public static function getDependedConditionalComponentClasses(): array
     {
         return [
-            \PoP\Posts\Component::class,
+            \PoP\CustomPosts\Component::class,
         ];
     }
 
