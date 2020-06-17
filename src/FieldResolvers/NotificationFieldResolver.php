@@ -14,7 +14,7 @@ use PoP\Engine\Route\RouteUtils;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Users\TypeResolvers\UserTypeResolver;
 use PoP\Notifications\TypeResolvers\NotificationTypeResolver;
-use PoP\Posts\Facades\PostTypeAPIFacade;
+use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
 
 class NotificationFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -175,7 +175,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
         $cmsengineapi = \PoP\Engine\FunctionAPIFactory::getInstance();
         $cmscommentsapi = \PoP\Comments\FunctionAPIFactory::getInstance();
         $cmsusersapi = \PoP\Users\FunctionAPIFactory::getInstance();
-        $postTypeAPI = PostTypeAPIFacade::getInstance();
+        $customPostTypeAPI = CustomPostTypeAPIFacade::getInstance();
         $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
         $cmscommentsresolver = \PoP\Comments\ObjectPropertyResolverFactory::getInstance();
         switch ($fieldName) {
@@ -248,7 +248,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
                 // URL depends basically on the action performed on the object type
                 switch ($notification->object_type) {
                     case 'Post':
-                        return $postTypeAPI->getPermalink($notification->object_id);
+                        return $customPostTypeAPI->getPermalink($notification->object_id);
 
                     case 'User':
                         return $cmsusersapi->getUserURL($notification->object_id);
@@ -258,7 +258,7 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
 
                     case 'Comments':
                         $comment = $cmscommentsapi->getComment($notification->object_id);
-                        return $postTypeAPI->getPermalink($cmscommentsresolver->getCommentPostId($comment));
+                        return $customPostTypeAPI->getPermalink($cmscommentsresolver->getCommentPostId($comment));
                 }
                 return null;
 
