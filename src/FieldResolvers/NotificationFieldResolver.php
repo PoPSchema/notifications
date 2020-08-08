@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\Notifications\FieldResolvers;
+namespace PoPSchema\Notifications\FieldResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
@@ -12,9 +12,9 @@ use PoP\ComponentModel\Misc\GeneralUtils;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Engine\Route\RouteUtils;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
-use PoP\Users\TypeResolvers\UserTypeResolver;
-use PoP\Notifications\TypeResolvers\NotificationTypeResolver;
-use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
+use PoPSchema\Users\TypeResolvers\UserTypeResolver;
+use PoPSchema\Notifications\TypeResolvers\NotificationTypeResolver;
+use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 
 class NotificationFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -173,11 +173,11 @@ class NotificationFieldResolver extends AbstractDBDataFieldResolver
     {
         $notification = $resultItem;
         $cmsengineapi = \PoP\Engine\FunctionAPIFactory::getInstance();
-        $cmscommentsapi = \PoP\Comments\FunctionAPIFactory::getInstance();
-        $cmsusersapi = \PoP\Users\FunctionAPIFactory::getInstance();
+        $cmscommentsapi = \PoPSchema\Comments\FunctionAPIFactory::getInstance();
+        $cmsusersapi = \PoPSchema\Users\FunctionAPIFactory::getInstance();
         $customPostTypeAPI = CustomPostTypeAPIFacade::getInstance();
-        $taxonomyapi = \PoP\Taxonomies\FunctionAPIFactory::getInstance();
-        $cmscommentsresolver = \PoP\Comments\ObjectPropertyResolverFactory::getInstance();
+        $taxonomyapi = \PoPSchema\Taxonomies\FunctionAPIFactory::getInstance();
+        $cmscommentsresolver = \PoPSchema\Comments\ObjectPropertyResolverFactory::getInstance();
         switch ($fieldName) {
             case 'action':
                 return $notification->action;

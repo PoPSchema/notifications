@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\Notifications;
+namespace PoPSchema\Notifications;
 
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
@@ -31,7 +31,7 @@ class Component extends AbstractComponent
     public static function getDependedConditionalComponentClasses(): array
     {
         return [
-            \PoP\CustomPosts\Component::class,
+            \PoPSchema\CustomPosts\Component::class,
         ];
     }
 

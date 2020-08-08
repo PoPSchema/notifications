@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PoP\Notifications\TypeResolvers;
+namespace PoPSchema\Notifications\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
-use PoP\Notifications\TypeDataLoaders\NotificationTypeDataLoader;
+use PoPSchema\Notifications\TypeDataLoaders\NotificationTypeDataLoader;
 
 class NotificationTypeResolver extends AbstractTypeResolver
 {

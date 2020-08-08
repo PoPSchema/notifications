@@ -1,5 +1,5 @@
 {
-    "name": "getpop/notifications",
+    "name": "pop-schema/notifications",
     "type": "library",
     "description": "Adds support for notifications",
     "keywords": [
@@ -22,22 +22,22 @@
         "getpop/engine": "dev-master"
     },
     "require-dev": {
-        "getpop/customposts": "dev-master",
+        "pop-schema/customposts": "dev-master",
         "phpstan/phpstan": "^0.12",
         "phpunit/phpunit": ">=8.5",
         "squizlabs/php_codesniffer": "^3.0"
     },
     "suggest": {
-        "getpop/customposts": "Integration with Posts"
+        "pop-schema/customposts": "Integration with Posts"
     },
     "autoload": {
         "psr-4": {
-            "PoP\\Notifications\\": "src"
+            "PoPSchema\\Notifications\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\Notifications\\": "tests"
+            "PoPSchema\\Notifications\\": "tests"
         }
     },
     "scripts": {
