@@ -27,7 +27,7 @@ class NotificationTypeDataLoader extends AbstractTypeQueryableDataLoader
 
         // Pagination
         $vars = ApplicationState::getVars();
-        if ($vars['loading-latest']) {
+        if (isset($vars['loading-latest']) && $vars['loading-latest']) {
             $query['pagenumber'] = 1;
             $query['limit'] = -1; // Limit=-1 => Bring all results
         } else {
